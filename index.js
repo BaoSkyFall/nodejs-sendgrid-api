@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
     next();
   });
 app.route("/").get(function (req, res) {
-   res.sendFile(path.join(__dirname, '/form.html'));
+   res.send("OK Loaded")
 });
 app.post('/contact',cors(), (req, res) => {
     console.log(req);
