@@ -5,7 +5,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express();
 app.use(cors());
-sgMail.setApiKey('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');
+sgMail.setApiKey('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');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(function(req, res, next) {
@@ -21,10 +21,19 @@ app.post('/contact',cors(), (req, res) => {
     const msg = {
         to: `harrykill.007@gmail.com`, // Change to your recipient
         from: 'baoit128@gmail.com', // Change to your verified sender
-        subject: req.body.subject,
-        text: `Message from ${req.body.email}:\n${req.body.message}`,
+        subject: 'Subject Test',
+        template_id:'d-669eb6b3423f45b4948da943bc1edc8c',
+        dynamic_template_data:{
+            "name":"Quoc Bao",
+            "email":"baoit128@gmail.com",
+            "phoneNumber": "0938443767",
+            "subject":"Toys",
+            "message":"Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+            
+           }
     }
     try {
+        console.log('start send')
         sgMail.send(msg);
         res.send("Message Successfully Sent!");
       } catch (error) {
