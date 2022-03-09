@@ -1,4 +1,4 @@
-require('dotenv').config();
+hanrequire('dotenv').config();
 const path = require('path');
 const sgMail = require('@sendgrid/mail');
 const express = require('express')
@@ -19,13 +19,13 @@ app.route("/").get(function (req, res) {
 app.post('/contact',cors(), (req, res) => {
     console.log(req);
     const msg = {
-        to: `harrykill.007@gmail.com`, // Change to your recipient
-        from: 'baoit128@gmail.com', // Change to your verified sender
-        subject: 'Subject Test',
+        to: `sales@dpig-logistics.com`, // Change to your recipient
+        from: 'ops@dpig-logistics.com', // Change to your verified sender
+        subject: 'Information ',
         template_id:'d-669eb6b3423f45b4948da943bc1edc8c',
         dynamic_template_data:{
-            "name":"Quoc Bao",
-            "email":"baoit128@gmail.com",
+            "name":"Test Test",
+            "email":"sales@dpig-logistics.com",
             "phoneNumber": "0938443767",
             "subject":"Toys",
             "message":"Lorem Ipsum is simply dummy text of the printing and typesetting industry"
