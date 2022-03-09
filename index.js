@@ -1,4 +1,3 @@
-hanrequire('dotenv').config();
 const path = require('path');
 const sgMail = require('@sendgrid/mail');
 const express = require('express')
